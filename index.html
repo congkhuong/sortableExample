@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<title>HTML Tutorial</title>
+
+<link rel="stylesheet" href="jquery-ui.min.css">
+
+<script src="jquery.min.js"></script>
+
+<script src="jquery-ui.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$('#sortable').sortable({
+			axis: 'y',
+			update: function (event, ui) {
+				var data = $(this).sortable('serialize');
+				console.log(data);
+				// POST to server using $.post or $.ajax
+				/*$.ajax({
+					data: data,
+					type: 'POST',
+					url: '/your/url/here'
+				});*/
+			}
+		});
+	});
+
+</script>
+
+<body>
+
+<h1>This is a heading</h1>
+<p>This is a paragraph.</p>
+
+	<ul id="sortable">
+	   <li id="item-1">Khuong</li>
+	   <li id="item-2">Khoa</li>
+	</ul>
+</body>
+</html>
